@@ -7,11 +7,11 @@ cask "simbridge" do
   desc "Mount iOS Simulator app files as locations in the macOS Finder"
   homepage "https://github.com/andreas-maser/SimBridge"
 
-  depends_on macos: :sonoma
+  depends_on macos: :sonoma   # macOS 14 (Sonoma) or newer
 
-  # Das Archiv packt die App in einen Ordner "SimBridge/",
-  # darin liegen SimBridge.app und LICENSE.txt.
   app "SimBridge/SimBridge.app"
+  # The release ZIP wraps the app in a "SimBridge" folder (app + LICENSE.txt).
+  # If you ever ship an app-at-top ZIP, change this to:  app "SimBridge.app"
 
   zap trash: [
     "~/Library/Group Containers/group.de.andreasmaser.SimBridge",
